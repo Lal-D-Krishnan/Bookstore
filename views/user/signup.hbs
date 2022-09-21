@@ -1,0 +1,183 @@
+<style>
+body{
+
+overflow-y: hidden;
+}
+    .logo a img {
+        max-width: 50%;
+    }
+
+    .breadcrumb-area {
+        padding: 19px 0;
+    }
+
+    .pb-40 {
+    padding-bottom: 1px;
+}
+.pt-50 {
+    padding-top: 20px;
+}
+.login-register-wrapper .login-form-container .login-register-form form input {
+    margin-bottom: 15px;
+    
+}
+
+.login-register-wrapper .login-form-container .login-register-form form input h6{
+    margin-left: 20px;
+}
+</style>
+
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <div class="logo">
+                        <a href="index.html"><img src="logo/bookstorebonelogo.png" alt="logo"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="login-register-area pt-50 pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ms-auto me-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <a href="/login">
+                            <h4> login </h4>
+                        </a>
+                        <a class="active" href="/signup">
+                            <h4> register </h4>
+                        </a>
+                    </div>
+                    <div class="tab-content">
+                        <div id="lg2" class="tab-pane active">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="/signup" method="post">
+                                        <input type="text" onkeyup="return validateName()" name="Name" id="Name" placeholder="Username">
+                                        <h6 id="name-error" ></h6>
+
+                                        <input type="password" onkeyup="return validatePassword()" name="Password" id="Password" placeholder="Password" >
+                                        <h6 id="password-error"></h6>
+                                        
+                                        <input type="text" onkeyup="return validatePhoneNumber()" name="number" id="number" placeholder="Phonenumber - 10 digit">
+                                        <h6 id="phonenumber-error"></h6>
+
+                                        <input type="email" id="email" onkeyup="return validateEmail()" name="Email" placeholder="Email">
+                                        <h6 id="email-error"></h6>
+
+                                        <div class="button-box">
+                                            <button type="submit" onclick="return validateForm(event)" >Register</button>
+                                        </div>
+                                        <h6 id="form-error"></h6>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let nameError = document.getElementById('name-error')
+    let emailError = document.getElementById('email-error')
+    let passwdError = document.getElementById('password-error')
+    let phonenumberError = document.getElementById('phonenumber-error')
+    let formError = document.getElementById('form-error')
+
+    function validateName() {
+  let name = document.getElementById('Name').value;
+
+  if (name.length == 0) {
+            document.getElementById('name-error').style.color = 'red';
+    nameError.innerHTML = 'Name is Required';
+    return false;
+  }
+  if (name.length < 5) {
+            document.getElementById('name-error').style.color = 'red';
+    nameError.innerHTML = 'Name contain atleast 5 character';
+    return false;
+  }
+  if (name.length > 20) {
+            document.getElementById('name-error').style.color = 'red';
+    nameError.innerHTML = 'Exceeded maximum limit';
+    return false;
+  }
+  if (!name.match(/^[A-Za-z]*\s{0,1}[A-Za-z]*\s{0,1}?[A-Za-z]*$/)) {
+            document.getElementById('name-error').style.color = 'red';
+    nameError.innerHTML = 'Can only contain letters';
+    return false;
+  }
+        document.getElementById('name-error').style.color = 'green';
+  nameError.innerHTML = 'valid';
+  return true;
+}
+
+
+function validateEmail() {
+  let email = document.getElementById('email').value;
+  if (email.length == 0) {
+    document.getElementById('email-error').style.color = 'red';
+    emailError.innerHTML = 'Email is Required'
+    return false;
+  }
+  if (!email.match(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/)) {
+            document.getElementById('email-error').style.color = 'red';
+    emailError.innerHTML = 'Email Invalid'
+    return false;
+  }
+        document.getElementById('email-error').style.color = 'green';
+  emailError.innerHTML = 'valid';
+  return true;
+}
+
+function validatePassword(){
+  let password = document.getElementById('Password').value;
+  if (password.length == 0) {
+    document.getElementById('password-error').style.color = 'red';
+    passwdError.innerHTML = 'Password is Required'
+    return false;
+  } 
+  if(!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)){
+    document.getElementById('password-error').style.color = 'red';
+    passwdError.innerHTML = 'Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character'
+    return false;
+  }
+    document.getElementById('password-error').style.color = 'green';
+  passwdError.innerHTML = 'valid';
+  return true;
+}
+
+function validatePhoneNumber(){
+    let number = document.getElementById('number').value;
+    if(!number.match(/^\d{10}$/)){
+        document.getElementById('phonenumber-error').style.color = 'red'
+       phonenumberError.innerHTML = 'Must contain exactly 10 digits'
+        return false;
+    }
+    document.getElementById('phonenumber-error').style.color = 'green'
+    phonenumberError.innerHTML = 'valid'
+    return true;
+
+}
+
+function validateForm() {
+  if ( !validateName() || !validateEmail() || !validatePassword() || !validatePhoneNumber() ) {
+
+    document.getElementById('form-error').style.color = 'red';
+    formError.innerHTML = 'Please fix error to submit';
+    return false;
+  }else{
+    return true;
+  }
+}
+
+</script>

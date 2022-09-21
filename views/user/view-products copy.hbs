@@ -1,0 +1,1532 @@
+  <div class="slider-area">
+            <div class="container">
+                <div class="hero-slider-active-1 nav-style-2 dot-style-2 dot-style-2-position-1 dot-style-2-active-black">
+                    <div class="single-hero-slider single-animation-wrap slider-height-1 custom-d-flex custom-align-item-center bg-img hm2-slider-bg" style="background-image:url(assets/images/slider/hm-2-slider-1.jpg);">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-slider-content-2 slider-animated-1">
+                                    <h1 class="animated"><span>A Writer</span> Only <br>begins a book. A Reader Finishes it.</h1>
+                                    <p class="animated">“A reader lives a thousand lives before he dies . . . The man who never reads lives only one.” &nbsp; - by G.R.R.M </p>
+                                    <div class="btn-style-2">
+                                        <a class="animated" href="product-details.html">explore now <i class="icon-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-hero-slider single-animation-wrap slider-height-1 custom-d-flex custom-align-item-center bg-img hm2-slider-bg" style="background-image:url(assets/images/slider/hm-2-slider-2.jpg);">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-slider-content-2 slider-animated-1">
+                                    <h1 class="animated"><span>One</span> glance <br>at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.</h1>
+                                    <p class="animated"> – Carl Sagan</p>
+                                    <div class="btn-style-2">
+                                        <a class="animated" href="product-details.html">explore now <i class="icon-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{{!-- Where the content starts --}}
+ <div class="product-area pt-50 pb-80">
+            <div class="container">
+                <div class="section-title-2 mb-45">
+                    {{!-- text-center --}}
+                    <h2><span>New </span>Arrivals</h2>
+                    {{!-- <p>Top our product best selling</p> --}}
+                </div>
+                <div class="tab-btn-wrap mb-40">
+                    <div class="tab-style-2 nav">
+                        <a class="active" href="#product-1" data-bs-toggle="tab">All Products</a>
+                        <a href="#product-2" data-bs-toggle="tab">Action &amp; Adventure</a>
+                        <a href="#product-3" data-bs-toggle="tab">Biogrphies, Diaries &amp; True Accounts</a>
+                        <a href="#product-4" data-bs-toggle="tab">Crime Thriller &amp; Mystery</a>
+                        <a href="#product-5" data-bs-toggle="tab">Science Fiction &amp; Fantasy</a>
+                    </div>
+                    <div class="btn-style-2">
+                        <a class="animated" href="shop.html">see all product <i class="icon-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="tab-content jump">
+                    <div id="product-1" class="tab-pane active">
+                        <div class="row">
+                            {{#each products}}
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details/{{this._id}}">
+                                            <img src="/product-images/{{this.image.[0]}}" alt="" style="width: 270px; height:324px;">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist" onclick="addToWishlist('{{this._id}}')" type="button" ><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details/">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹{{this.SellingPrice}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹{{this.SellingPrice}}</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            {{!-- <a href="/add-to-cart/{{this._id}}"> --}}
+                                            <button onclick="addToCart('{{this._id}}')" title="Add to Cart" type="button" >Add To Cart</button>
+                                            {{!-- </a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                        </div>
+                    </div>
+
+                       
+
+
+                    {{!-- id - 2 --}}
+                    <div id="product-2" class="tab-pane">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-20.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Snakeskin print belt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹20.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Snakeskin print belt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹20.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-19.jpg" alt="">
+                                        </a>
+                                        <span class="pro-badge left bg-red">-20%</span>
+                                        {{!-- offer --}}
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Faded Grey T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Faded Grey T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-18.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Tie-up Sute Sandals</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹35.45</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Tie-up Sute Sandals</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹35.45</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-17.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Vintage Socks X3</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹45.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Vintage Socks X3</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹45.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-16.jpg" alt="">
+                                        </a>
+                                        <span class="pro-badge left bg-red">-20%</span>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Simple Rounded Sunglasses</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Simple Rounded Sunglasses</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-15.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic White Simple Sneaker</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹55.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic White Simple Sneaker</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹55.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-14.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Make Thing Happen T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹65.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Make Thing Happen T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹65.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-13.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic Joggin Shorts</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹75.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic Joggin Shorts</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹75.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- id-3 --}}
+                    <div id="product-3" class="tab-pane">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-16.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Simple Rounded Sunglasses</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹20.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Simple Rounded Sunglasses</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹20.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-15.jpg" alt="">
+                                        </a>
+                                        <span class="pro-badge left bg-red">-20%</span>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic White Simple Sneaker</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic White Simple Sneaker</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-14.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Make Thing Happen T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹35.45</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Make Thing Happen T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹35.45</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-13.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Basic Joggin Shorts</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹45.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Basic Joggin Shorts</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹45.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-20.jpg" alt="">
+                                        </a>
+                                        <span class="pro-badge left bg-red">-20%</span>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Snakeskin print belt</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Snakeskin print belt</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-19.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Faded Grey T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹55.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Faded Grey T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹55.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-18.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Tie-up Sute Sandals</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹65.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Tie-up Sute Sandals</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹65.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-17.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Vintage Socks X3</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹75.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Vintage Socks X3</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹75.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- id - 4 --}}
+                    <div id="product-4" class="tab-pane">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-14.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Make Thing Happen T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹20.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Make Thing Happen T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹20.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-13.jpg" alt="">
+                                        </a>
+                                        <span class="pro-badge left bg-red">-20%</span>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic Joggin Shorts</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic Joggin Shorts</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-16.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Simple Rounded Sunglasses</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹35.45</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Simple Rounded Sunglasses</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹35.45</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-15.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Basic White Simple Sneaker</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹45.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Basic White Simple Sneaker</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹45.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-18.jpg" alt="">
+                                        </a>
+                                        <span class="pro-badge left bg-red">-20%</span>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Tie-up Sute Sandals</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Tie-up Sute Sandals</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-17.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Vintage Socks X3</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹55.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Vintage Socks X3</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹55.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-20.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Snakeskin print belt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹65.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Snakeskin print belt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹65.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-19.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Faded Grey T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹75.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Faded Grey T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹75.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- id- 5 --}}
+                    <div id="product-5" class="tab-pane">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-15.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic White Simple Sneaker</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹20.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic White Simple Sneaker</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹20.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-13.jpg" alt="">
+                                        </a>
+                                        <span class="pro-badge left bg-red">-20%</span>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic Joggin Shorts</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Basic Joggin Shorts</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-16.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Simple Rounded Sunglasses</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹35.45</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Simple Rounded Sunglasses</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹35.45</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-14.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Make Thing Happen T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹45.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Make Thing Happen T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹45.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-19.jpg" alt="">
+                                        </a>
+                                        <span class="pro-badge left bg-red">-20%</span>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details">Faded Grey T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">Faded Grey T-Shirt</a></h3>
+                                        <div class="product-price-2">
+                                            <span class="new-price">₹35.45</span>
+                                            <span class="old-price">₹45.80</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-17.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Vintage Socks X3</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹55.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Vintage Socks X3</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹55.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-20.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Snakeskin print belt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹65.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Snakeskin print belt</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹65.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details">
+                                            <img src="assets/images/product/product-18.jpg" alt="">
+                                        </a>
+                                        <div class="product-action-2 tooltip-style-2">
+                                            <button title="Wishlist"><i class="icon-heart"></i></button>
+                                            <button title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Tie-up Sute Sandals</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹75.50</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <div class="product-rating-wrap">
+                                            <div class="product-rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star gray"></i>
+                                            </div>
+                                            <span>(2)</span>
+                                        </div>
+                                        <h3><a href="/product-details">Tie-up Sute Sandals</a></h3>
+                                        <div class="product-price-2">
+                                            <span>₹75.50</span>
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            <button title="Add to Cart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

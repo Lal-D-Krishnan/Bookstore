@@ -1,0 +1,134 @@
+<style>
+    .logo a img {
+        max-width: 50%;
+    }
+
+    .breadcrumb-area {
+        padding: 26px 0;
+    }
+</style>
+
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <div class="logo">
+                        <a href="index.html"><img src="logo/bookstorebonelogo.png" alt="logo"></a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="login-register-area pt-40 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ms-auto me-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <a class="active" href="/login">
+                            <h4> login </h4>
+                        </a>
+                        <a href="/signup">
+                            <h4> register </h4>
+                        </a>
+                    </div>
+                    {{!-- <h1>fook</h1> --}}
+                    <div class="tab-content">
+                        <div id="lg1" class="tab-pane active">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="/login" method="post">
+                                        {{#if loginErr}}
+                                        <p class="text-danger">{{loginErr}}</p>
+                                        {{/if}}
+                                        {{!-- james@gmail.com Zoom@199 --}}
+
+                                        {{!-- value="kiranh@gmail.com" value="Kiran@1997" --}}
+                                        {{!-- value="abee@gmail.com" value="Lal@1998" --}}
+                                        <input type="text" id="email-login" name="Email" onkeyup="return validateEmaillogin()" placeholder="Email" value="james@gmail.com">
+                                        <h6 id="email-error-login"></h6>
+
+                                        <input type="password" id="password-login"  name="Password" onkeyup="return validatePasswordlogin()" placeholder="Password" value="Zoom@199">
+                                        <h6 id="password-error-login"></h6>
+
+
+
+                                        <div class="button-box">
+                                            <div class="login-toggle-btn">
+                                                {{!-- <input type="checkbox">
+                                                <label>Remember me</label> --}}
+                                                <a href="/otplogin">Login with OTP?</a>
+                                            </div>
+                                            <button type="submit" onclick="return validateFormLogin()">Login</button>
+                                        </div>
+                                        <h6 id="form-error-login"></h6>
+
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let emailError = document.getElementById('email-error-login')
+    let passwdError = document.getElementById('password-error-login')
+    let formError = document.getElementById('form-error-login')
+
+    function validateEmaillogin() {
+        let email = document.getElementById('email-login').value;
+        if (email.length == 0) {
+            document.getElementById('email-error-login').style.color = 'red';
+            emailError.innerHTML = 'Email is Required'
+            return false;
+        }
+        if (!email.match(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/)) {
+            document.getElementById('email-error-login').style.color = 'red';
+            emailError.innerHTML = 'Email Invalid'
+            return false;
+        }
+        document.getElementById('email-error-login').style.color = 'green';
+        emailError.innerHTML = 'valid';
+        return true;
+    }
+
+    function validatePasswordlogin() {
+        let password = document.getElementById('password-login').value;
+        if (password.length == 0) {
+            document.getElementById('password-error-login').style.color = 'red';
+            passwdError.innerHTML = 'Password is Required'
+            return false;
+        }
+        if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
+            document.getElementById('password-error-login').style.color = 'red';
+            passwdError.innerHTML = 'Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character'
+            return false;
+        }
+        document.getElementById('password-error-login').style.color = 'green';
+        passwdError.innerHTML = 'valid';
+        return true;
+    }
+
+    function validateFormLogin() {
+        if (!validateEmail() || !validatePassword()) {
+
+            document.getElementById('form-error-login').style.color = 'red';
+            formError.innerHTML = 'Please fix error to submit';
+            return false;
+            
+        } else {
+            return true;
+        }
+    }
+
+</script>

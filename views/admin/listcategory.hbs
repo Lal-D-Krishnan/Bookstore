@@ -1,0 +1,39 @@
+<section>
+  <div class="container">
+    {{!-- <div class="row mt-4">
+      <a href="/admin/list-users" class="btn btn-outline-secondary w-auto me-3">List User</a>
+      <a href="/admin/add-users" class="btn btn-outline-warning w-auto me-3">Add User</a>
+      <a href="/admin/add-products" class="btn btn-outline-success w-auto">Add Product</a>
+    </div> --}}
+    <table class="table mt-5" id="myTable">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Category Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {{#each categories}}
+        <tr>
+          <th scope="row">{{inc @index}}</th>
+          <td>{{this.Category}}</td>
+          <td><a href="/admin/editcategory/{{this._id}}" class="btn btn-primary">Edit</a></td>
+          <td><a href="/admin/deletecategory/{{this._id}}" class="btn btn-danger"
+              onclick="return confirm('Are you sure you want to delete {{this.Category}} Category?')">Delete</a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div>
+</div>
+</div>
+
+<script>
+
+</script>

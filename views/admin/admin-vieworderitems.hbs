@@ -1,0 +1,36 @@
+<h1>
+    Admin's View of Ordered Users Items 
+</h1>
+
+<section>
+    <div class="container mt-5">
+        <div class="row"> 
+            {{#each products}}
+
+                 <div class="col-md-3 p-3">
+                    <div class="card" style="width:15rem;">
+                            <img class="card-img-top"
+                             src="/product-images/{{product.image.[0]}}" 
+                             alt="Card image cap"
+                             style="height:12 rem">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{this.product.ProductName}}</h5>
+                        <p class="card-text">Rs. {{this.product.SellingPrice}}</p>
+                        <p class="card-text"> Quantity: {{this.quantity}}</p>
+                        {{!-- <p class="card-text">{{this.Description}}</p> --}}
+
+                    </div>
+                             
+                    </div>
+
+                </div>
+                {{/each}}
+        </div>
+
+    </div>
+</section>
+
+
+</div>
+</div>
+</div>

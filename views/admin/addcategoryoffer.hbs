@@ -1,0 +1,32 @@
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Add Category Offer</h2>
+                <form action="/admin/addcategoryoffer" method="POST">
+
+                    <label for="">{{category.Category}} </label>
+                    <input type="text" name="catgryofframt" class="form-control" placeholder="Enter Category Offer" required>
+                    <br>
+                    <label for="">Category</label>
+                    {{!-- <input type="text" name="Category" class="form-control"> --}}
+                    <select name="category_id" class="form-control" required>
+                        {{#each categories}}
+                            {{#if this.categoryoffer}}
+
+                            {{else}}
+                            <option value="{{this._id}}">{{this.Category}}</option>
+                            {{/if}}
+                        {{/each}}
+                    </select>
+
+                    <button type="submit" class="btn btn-success mt-4">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+</div>

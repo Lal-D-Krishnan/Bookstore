@@ -1,0 +1,56 @@
+<section>
+  <div class="container">
+    {{!-- <div class="row mt-4">
+      <a href="/admin/list-users" class="btn btn-outline-secondary w-auto me-3">List User</a>
+      <a href="/admin/add-users" class="btn btn-outline-warning w-auto me-3">Add User</a>
+      <a href="/admin/add-products" class="btn btn-outline-success w-auto">Add Product</a>
+    </div> --}}
+    <table class="table mt-5" id="myTable">
+
+      <h1>This is the list of Coupon</h1>
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Coupon Name</th>
+          <th scope="col">% OFF</th>
+          <th scope="col">State</th>
+          <th scope="col">Status</th>
+          {{!-- <th scope="col">Password</th> --}}
+          {{!-- <th>Delete</th> --}}
+
+        </tr>
+      </thead>
+      <tbody>
+        {{#each allCoupons}}
+        <tr>
+          <th scope="row">{{inc @index}}</th>
+          <td>{{this.coupon}}</td>
+          <td style="color: green;">{{this.offpercent}}</td>
+          <td>
+            {{#if this.status}}
+            <p style="color:blue">Active</p>
+            {{else}}
+            <p style="color:red">Inactive</p>
+            {{/if}}
+          </td>
+          <td>
+            {{#if this.status}}
+            <a href="/admin/blockcoupon/{{this._id}}" class="btn btn-danger">Block</a>
+            {{else}}
+            <a href="/admin/unblockcoupon/{{this._id}}" class="btn btn-success">UnBlock</a>
+            {{/if}}
+          </td>
+          {{!-- //<td>{{this.Password}}</td> --}}
+          {{!-- <td><a href="/admin/deletecategory/{{this._id}}" class="btn btn-danger"
+              onclick="return confirm('Are you sure you want to delete {{this.Category}} Category?')">Delete</a></td>
+          --}}
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div>
+</div>
+</div>

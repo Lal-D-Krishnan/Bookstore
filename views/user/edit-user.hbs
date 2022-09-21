@@ -1,0 +1,129 @@
+        
+        <div class="login-register-area pt-50 pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12 ms-auto me-auto">
+                        <div class="login-register-wrapper">
+                            <div class="login-register-tab-list nav">
+                                <a href="#">
+                                    <h4> Edit User </h4>
+                                </a>
+                                {{!-- <a class="active" href="/signup">
+                                    <h4> register </h4>
+                                </a> --}}
+                            </div>
+                            <div class="tab-content">
+                                <div id="lg2" class="tab-pane active">
+                                    <div class="login-form-container">
+                                        <div class="login-register-form">
+                                            <form action="/edit-user/{{registeredUser._id}}" method="post">
+                                             {{#if editusr}}
+                                                <p class="text-danger">{{res_edituser}}</p>
+                                            {{/if}}
+                                                {{!-- <input type="text" name="userId" id="" value="{{registeredUser._id}}" hidden> --}}
+                                                <input type="text" onkeyup="return validateNameedit()" id="Nameedit" name="Name" placeholder="Name" value="{{userdetails.Name}}">
+                                        <h6 id="name-error-edit"></h6>
+                                                
+                                                <input type="text" onkeyup="return validateEmailedit()" id="emailedit" name="Email" placeholder="Email" value="{{userdetails.Email}}">
+                                        <h6 id="email-error-edit"></h6>
+
+                                                <input type="text" onkeyup="return validatePasswordedit()" id="Passwordedit"  name="Password" placeholder="Enter New Password" >
+                                        <h6 id="password-error-edit"></h6>
+
+                                                <div class="button-box">
+                                                    <button onclick="return validateFormedit()" type="submit">Add</button>
+                                                </div>
+                                        <h6 id="form-error-edit"></h6>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+    let nameError = document.getElementById('name-error-edit')
+    let emailError = document.getElementById('email-error-edit')
+    let passwdError = document.getElementById('password-error-edit')
+    let formError = document.getElementById('form-error-edit')
+
+    function validateNameedit() {
+  let name = document.getElementById('Nameedit').value;
+
+  if (name.length == 0) {
+            document.getElementById('name-error-edit').style.color = 'red';
+    nameError.innerHTML = 'Name is Required';
+    return false;
+  }
+  if (name.length < 3) {
+            document.getElementById('name-error-edit').style.color = 'red';
+    nameError.innerHTML = 'Name contain atleast 3 character';
+    return false;
+  }
+  if (name.length > 20) {
+            document.getElementById('name-error-edit').style.color = 'red';
+    nameError.innerHTML = 'Exceeded maximum limit';
+    return false;
+  }
+  if (!name.match(/^[A-Za-z]*\s{0,1}[A-Za-z]*\s{0,1}?[A-Za-z]*$/)) {
+            document.getElementById('name-error-edit').style.color = 'red';
+    nameError.innerHTML = 'Can only contain letters';
+    return false;
+  }
+        document.getElementById('name-error-edit').style.color = 'green';
+  nameError.innerHTML = 'valid';
+  return true;
+}
+
+
+function validateEmailedit() {
+  let email = document.getElementById('emailedit').value;
+  if (email.length == 0) {
+    document.getElementById('email-error-edit').style.color = 'red';
+    emailError.innerHTML = 'Email is Required'
+    return false;
+  }
+  if (!email.match(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/)) {
+            document.getElementById('email-error-edit').style.color = 'red';
+    emailError.innerHTML = 'Email Invalid'
+    return false;
+  }
+        document.getElementById('email-error-edit').style.color = 'green';
+  emailError.innerHTML = 'valid';
+  return true;
+}
+
+function validatePasswordedit(){
+  let password = document.getElementById('Passwordedit').value;
+  if (password.length == 0) {
+    document.getElementById('password-error-edit').style.color = 'red';
+    passwdError.innerHTML = 'Password is Required'
+    return false;
+  } 
+  if(!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)){
+    document.getElementById('password-error-edit').style.color = 'red';
+    passwdError.innerHTML = 'Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character'
+    return false;
+  }
+    document.getElementById('password-error-edit').style.color = 'green';
+  passwdError.innerHTML = 'valid';
+  return true;
+}
+
+function validateFormedit() {
+  if ( !validateName() || !validateEmail() || !validatePassword() || !validatePhoneNumber() ) {
+
+    document.getElementById('form-error-edit').style.color = 'red';
+    formError.innerHTML = 'Please fix error to submit';
+    return false;
+  }else{
+    return true;
+  }
+}
+
+</script>

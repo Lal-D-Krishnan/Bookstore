@@ -1,0 +1,109 @@
+<h1 class="ml-3 mt-3 mb-2">
+  List Orders
+</h1>
+
+<section>
+  <div class="container">
+    {{!-- <div class="row mt-4">
+      <a href="/admin/list-users" class="btn btn-outline-secondary w-auto me-3">List User</a>
+      <a href="/admin/add-users" class="btn btn-outline-warning w-auto me-3">Add User</a>6666666
+      <a href="/admin/add-products" class="btn btn-outline-success w-auto">Add Product</a>
+    </div> --}}
+    <table class="table" id="myTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th scope="col">Date</th>
+          <th scope="col">Delivery Details</th>
+          <th scope="col">Amount</th>
+          {{!-- <th scope="col">Password</th> --}}
+          <th>Payment</th>
+          <th>Status</th>
+          <th>View Products</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {{#each orders}}
+        <tr>
+          <th scope="row">{{inc @index}}</th>
+          <td>{{this.date}}</td>
+          <td><a href="/admin/admin-viewdeliveryaddress/{{this.deliveryDetails}}"> Details</a></td>
+          <td>₹ {{this.totalAmount}}</td>
+          <td>{{this.paymentMethod}}</td>
+          <td>
+
+            {{#ifEquals this.status 'DELIVERED'}}
+            <div class="dropdown">
+              <button class="btn btn-secondary  rounded-0 " style="pointer-events: none;" href="#" role="button" aria-expanded="false">
+                {{this.status}}
+              </button>
+            </div>
+            {{/ifEquals}}
+            {{#ifEquals this.status 'PENDING'}}
+            <div class="dropdown">
+              <button class="btn btn-secondary  rounded-0 " style="pointer-events: none;" href="#" role="button" aria-expanded="false">
+                {{this.status}}
+              </button>
+            </div>
+            {{/ifEquals}}
+            {{#ifEquals this.status 'CANCEL'}}
+            <div class="dropdown">
+              <button class="btn btn-secondary  rounded-0 " style="pointer-events: none;" href="#" role="button" aria-expanded="false">
+                {{this.status}}
+              </button>
+            </div>
+            {{/ifEquals}}
+            
+            {{#ifEquals this.status 'PLACED'}}
+            <!-- Small button groups (default and split) -->
+            <div class="btn-group">
+              <button class="btn btn-secondary btn-sm" type="button">
+                {{this.status}}
+              </button>
+              <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                {{!-- <a class="dropdown-item" href="/admin/admin-orderplaced/{{this._id}}">PLACED</a> --}}
+                {{!-- <a class="dropdown-item" href="/admin/admin-orderpending/{{this._id}}">PENDING</a> --}}
+                <a class="dropdown-item" href="/admin/admin-ordershipped/{{this._id}}">SHIPPED</a>
+                {{!-- <a class="dropdown-item" href="/admin/admin-orderdelivered/{{this._id}}">DELIVERED</a> --}}
+                {{!-- <a class="dropdown-item" href="/admin/admin-ordercancel/{{this._id}}">CANCEL</a> --}}
+              </div>
+            </div>
+
+            {{/ifEquals}}
+
+            {{#ifEquals this.status 'SHIPPED'}}
+            <!-- Small button groups (default and split) -->
+            <div class="btn-group">
+              <button class="btn btn-secondary btn-sm" type="button">
+                {{this.status}}
+              </button>
+              <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                {{!-- <a class="dropdown-item" href="/admin/admin-orderplaced/{{this._id}}">PLACED</a> --}}
+                {{!-- <a class="dropdown-item" href="/admin/admin-orderpending/{{this._id}}">PENDING</a> --}}
+                {{!-- <a class="dropdown-item" href="/admin/admin-ordershipped/{{this._id}}">SHIPPED</a> --}}
+                <a class="dropdown-item" href="/admin/admin-orderdelivered/{{this._id}}">DELIVERED</a>
+                {{!-- <a class="dropdown-item" href="/admin/admin-ordercancel/{{this._id}}">CANCEL</a> --}}
+              </div>
+            </div>
+
+            {{/ifEquals}}
+
+          </td>
+          <td><a href="/admin/admin-vieworderitems/{{this._id}}" class="btn btn-info">View Product</a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div>
+</div>
+</div>

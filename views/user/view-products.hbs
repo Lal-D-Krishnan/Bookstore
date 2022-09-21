@@ -1,0 +1,473 @@
+
+
+<div class="slider-area">
+    <div class="container pt-200">
+        <div class="hero-slider-active-1 nav-style-2 dot-style-2 dot-style-2-position-1 dot-style-2-active-black">
+            <div class="single-hero-slider single-animation-wrap slider-height-1 custom-d-flex custom-align-item-center bg-img hm2-slider-bg"
+                style="background-image:url(banner-images/{{bannerImage.[0].bannerimages.[0]}});">
+                {{!-- <div
+                    class="single-hero-slider single-animation-wrap slider-height-1 custom-d-flex custom-align-item-center bg-img hm2-slider-bg"
+                    style="background-image:url(banner-images/1660804667445--88a7b4c3a60ca303b249e71da172467f.jpg);">
+                    --}}
+                    {{!-- <div
+                        class="single-hero-slider single-animation-wrap slider-height-1 custom-d-flex custom-align-item-center bg-img hm2-slider-bg"
+                        style="background-image:url(assets/images/slider/hm-2-slider-1.jpg);"> --}}
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-slider-content-2 slider-animated-1">
+                                    <h1 class="animated"><span>A Writer</span> Only <br>begins a book. A Reader Finishes
+                                        it.</h1>
+                                    <p class="animated">“A reader lives a thousand lives before he dies . . . The man
+                                        who never reads lives only one.” &nbsp; - by G.R.R.M </p>
+                                    <div class="btn-style-2">
+                                        <a class="animated" href="/">explore now <i
+                                                class="icon-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-hero-slider single-animation-wrap slider-height-1 custom-d-flex custom-align-item-center bg-img hm2-slider-bg pt-5"
+                        style="background-image:url(banner-images/{{bannerImage.[0].bannerimages.[1]}});">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-slider-content-2 slider-animated-1">
+                                    <h1 class="animated"><span>To</span> read <br>
+                                        is to voyage
+                                        through time.</h1>
+                                    <p class="animated"> – Carl Sagan</p>
+                                    <div class="btn-style-2">
+                                        <a class="animated" href="/">explore now <i
+                                                class="icon-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{!-- Where the content starts --}}
+        <div class="product-area pt-50 pb-80">
+            <div class="container">
+                <div class="section-title-2 mb-45">
+                    {{!-- text-center --}}
+                    <h2><span>New </span>Arrivals</h2>
+                    {{!-- <p>Top our product best selling</p> --}}
+                </div>
+                <div class="tab-btn-wrap mb-40">
+                    <div class="tab-style-2 nav">
+                        <a class="active" href="#product-1" data-bs-toggle="tab">All Products</a>
+                        <a href="#product-2" data-bs-toggle="tab">Action &amp; Adventure</a>
+                        <a href="#product-3" data-bs-toggle="tab">Biogrphies, Diaries &amp; True Accounts</a>
+                        <a href="#product-4" data-bs-toggle="tab">Crime Thriller &amp; Mystery</a>
+                        <a href="#product-5" data-bs-toggle="tab">Science Fiction &amp; Fantasy</a>
+                    </div>
+                    {{!-- <div class="btn-style-2">
+                        <a class="animated" href="shop.html">see all product <i class="icon-arrow-right"></i></a>
+                    </div> --}}
+                </div>
+                <div class="tab-content jump">
+                    <div id="product-1" class="tab-pane active">
+                        <div class="row">
+                            {{#each products}}
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details/{{this._id}}">
+                                            <img src="/product-images/{{this.image.[0]}}" alt="alternate fo"
+                                               >
+                                                {{!-- style="width: 270px; height:324px;"> --}}
+                                        </a>
+                                        {{#if this.categoryoffer}}
+                                        <span class="pro-badge left bg-red">-{{this.categoryoffer}}% </span>
+                                        {{/if}}
+                                        <div class="product-action-2 tooltip-style-2">
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" style=" background-color: #FF9090;"><i
+                                                    class="icon-heart"></i></button> --}}
+
+                                            
+                                            
+                                            <button id="wbtn" title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" ><i
+                                                    class="icon-heart"></i></button>
+
+                                            {{!-- style=" background-color: #BEA07D;" --}}
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button"><i class="icon-heart"></i></button> --}}
+                                           
+                                            
+                                            {{!-- <button title="Quick View" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"><i
+                                                    class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button> --}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details/">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            {{!-- <a href="/add-to-cart/{{this._id}}"> --}}
+                                                <button onclick="addToCart('{{this._id}}')" title="Add to Cart"
+                                                    type="button">Add To Cart</button>
+                                                {{!-- </a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+
+
+
+
+                    {{!-- id - 2 --}}
+                    <div id="product-2" class="tab-pane">
+                        <div class="row">
+                            {{#each actnAdvnt}}
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details/{{this._id}}">
+                                            <img src="/product-images/{{this.image.[0]}}" alt="alternate fo"
+                                               >
+                                                {{!-- style="width: 270px; height:324px;"> --}}
+                                        </a>
+                                        {{#if this.categoryoffer}}
+                                        <span class="pro-badge left bg-red">-{{this.categoryoffer}}% </span>
+                                        {{/if}}
+                                        <div class="product-action-2 tooltip-style-2">
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" style=" background-color: #FF9090;"><i
+                                                    class="icon-heart"></i></button> --}}
+
+                                            
+                                            
+                                            <button id="wbtn" title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" ><i
+                                                    class="icon-heart"></i></button>
+
+                                            {{!-- style=" background-color: #BEA07D;" --}}
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button"><i class="icon-heart"></i></button> --}}
+                                           
+                                            
+                                            {{!-- <button title="Quick View" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"><i
+                                                    class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button> --}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details/">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            {{!-- <a href="/add-to-cart/{{this._id}}"> --}}
+                                                <button onclick="addToCart('{{this._id}}')" title="Add to Cart"
+                                                    type="button">Add To Cart</button>
+                                                {{!-- </a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        {{/each }}
+                        </div>
+                    </div>
+                    {{!-- id-3 --}}
+                    <div id="product-3" class="tab-pane">
+                        <div class="row">
+                            {{#each bioatrue}}
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details/{{this._id}}">
+                                            <img src="/product-images/{{this.image.[0]}}" alt="alternate fo"
+                                               >
+                                                {{!-- style="width: 270px; height:324px;"> --}}
+                                        </a>
+                                        {{#if this.categoryoffer}}
+                                        <span class="pro-badge left bg-red">-{{this.categoryoffer}}% </span>
+                                        {{/if}}
+                                        <div class="product-action-2 tooltip-style-2">
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" style=" background-color: #FF9090;"><i
+                                                    class="icon-heart"></i></button> --}}
+
+                                            
+                                            
+                                            <button id="wbtn" title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" ><i
+                                                    class="icon-heart"></i></button>
+
+                                            {{!-- style=" background-color: #BEA07D;" --}}
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button"><i class="icon-heart"></i></button> --}}
+                                           
+                                            
+                                            {{!-- <button title="Quick View" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"><i
+                                                    class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button> --}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details/">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            {{!-- <a href="/add-to-cart/{{this._id}}"> --}}
+                                                <button onclick="addToCart('{{this._id}}')" title="Add to Cart"
+                                                    type="button">Add To Cart</button>
+                                                {{!-- </a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{!-- id - 4 --}}
+                    <div id="product-4" class="tab-pane">
+                        <div class="row">
+                            {{#each crimthrilmstry}}
+                             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details/{{this._id}}">
+                                            <img src="/product-images/{{this.image.[0]}}" alt="alternate fo"
+                                               >
+                                                {{!-- style="width: 270px; height:324px;"> --}}
+                                        </a>
+                                        {{#if this.categoryoffer}}
+                                        <span class="pro-badge left bg-red">-{{this.categoryoffer}}% </span>
+                                        {{/if}}
+                                        <div class="product-action-2 tooltip-style-2">
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" style=" background-color: #FF9090;"><i
+                                                    class="icon-heart"></i></button> --}}
+
+                                            
+                                            
+                                            <button id="wbtn" title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" ><i
+                                                    class="icon-heart"></i></button>
+
+                                            {{!-- style=" background-color: #BEA07D;" --}}
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button"><i class="icon-heart"></i></button> --}}
+                                           
+                                            
+                                            {{!-- <button title="Quick View" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"><i
+                                                    class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button> --}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details/">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            {{!-- <a href="/add-to-cart/{{this._id}}"> --}}
+                                                <button onclick="addToCart('{{this._id}}')" title="Add to Cart"
+                                                    type="button">Add To Cart</button>
+                                                {{!-- </a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                    {{!-- id- 5 --}}
+                    <div id="product-5" class="tab-pane">
+                        <div class="row">
+                            {{#each scificfatsy}}
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="single-product-wrap mb-35">
+                                    <div class="product-img product-img-zoom mb-15">
+                                        <a href="/product-details/{{this._id}}">
+                                            <img src="/product-images/{{this.image.[0]}}" alt="alternate fo"
+                                               >
+                                                {{!-- style="width: 270px; height:324px;"> --}}
+                                        </a>
+                                        {{#if this.categoryoffer}}
+                                        <span class="pro-badge left bg-red">-{{this.categoryoffer}}% </span>
+                                        {{/if}}
+                                        <div class="product-action-2 tooltip-style-2">
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" style=" background-color: #FF9090;"><i
+                                                    class="icon-heart"></i></button> --}}
+
+                                            
+                                            
+                                            <button id="wbtn" title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button" ><i
+                                                    class="icon-heart"></i></button>
+
+                                            {{!-- style=" background-color: #BEA07D;" --}}
+                                            {{!-- <button title="Wishlist" onclick="addToWishlist('{{this._id}}')"
+                                                type="button"><i class="icon-heart"></i></button> --}}
+                                           
+                                            
+                                            {{!-- <button title="Quick View" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"><i
+                                                    class="icon-size-fullscreen icons"></i></button>
+                                            <button title="Compare"><i class="icon-refresh"></i></button> --}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 text-center">
+                                        <h3><a href="/product-details/">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap-2 product-content-position text-center">
+                                        <h3><a href="/product-details">{{this.ProductName}}</a></h3>
+                                        <div class="product-price-2">
+                                            {{#if this.OldSellingPrice}}
+                                            <span class="new-price">₹{{this.SellingPrice}}</span>
+                                            <span class="old-price">₹{{this.OldSellingPrice}}</span>
+                                            {{else}}
+                                            <span>₹{{this.SellingPrice}}</span>
+                                            {{/if}}
+                                        </div>
+                                        <div class="pro-add-to-cart">
+                                            {{!-- <a href="/add-to-cart/{{this._id}}"> --}}
+                                                <button onclick="addToCart('{{this._id}}')" title="Add to Cart"
+                                                    type="button">Add To Cart</button>
+                                                {{!-- </a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{/each}}
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <div class="deal-area pt-150 pb-130 bg-img" style=" background-image:url(/logo/shiromani-kant-mo3FOTG62ao-unsplash.jpg); ">
+            <div class="container">
+                <div class="deal-content-1">
+                    <span>deal of the day</span>
+                    <h2><span>10% OFF</span> On <br>Non - Fiction</h2>
+                    <p>Buy books at the most affordable price online.</p>
+                   
+                    {{!-- <div class="deal-btn">
+                        <a href="product-details.html">Buy now</a>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+
+                <footer class="footer-area pb-90">
+            <div class="container">
+             
+                <div class="footer-middle footer-middle-mrg">
+                    <div class="row d-flex justify-content-center" >
+                       
+                        <div class="col-lg-6 col-md-6">
+                            <div class="contact-info-wrap-2 text-center">
+                                <div class="footer-logo footer-logo-mrg">
+                                    <a href="#"><img src="/logo/bookstorebonelogo.png" alt="logo" width="171 px" height="45px"></a>
+                                </div>
+                                <p>Book Store B One</p>
+                                {{!-- <p>(+0024)-877-932-0563</p> --}}
+                                <p>bookstorebone.com</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                {{!-- <div class="footer-bottom copyright text-center">
+                    <p>Copyright © 2021 HasThemes | <a href="https://hasthemes.com/">Built with <span>Norda</span> by HasThemes</a>.</p>
+                </div> --}}
+            </div>
+        </footer>

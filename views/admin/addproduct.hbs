@@ -1,0 +1,209 @@
+<section>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="text-center">Add Product</h2>
+        <form action="/admin/addproduct" enctype="multipart/form-data" method="POST">
+          <label for="">ProductName</label>
+          <input type="text" name="ProductName" id="ProductName" class="form-control" onkeyup=" validateProductName()">
+          <h6 id="productname-error"></h6>
+
+          <label for="">Author</label>
+          <input type="text" name="Author" id="Author" class="form-control" onkeyup=" validateAuthorName()">
+          <h6 id="authorname-error"> </h6>
+
+          <label for="">Selling Price</label>
+          <input type="text" name="SellingPrice" id="SellingPrice" class="form-control" onkeyup=" validateSellingPrice()">
+          <h6 id="sellingprice-error"></h6>
+
+          <label for="">Category</label>
+          {{!-- <input type="text" name="Category" class="form-control"> --}}
+          <select name="Category" class="form-control" required>
+            {{#each categories}}
+            <option value="{{this._id}}">{{this.Category}}</option>
+            {{/each}}
+          </select>
+
+          <label for="">Sub Category</label>
+          {{!-- <input type="text" name="Category" class="form-control"> --}}
+          <select name="SubCategory" class="form-control" required>
+            {{#each subcategories}}
+            <option value="{{this._id}}">{{this.SubCategory}}</option>
+            {{/each}}
+          </select>
+
+          <label for="">Description</label>
+          <input type="text" name="Description" id="Description" class="form-control" onkeyup=" validateDescription()">
+          <h6 id="Description-error"></h6>
+
+          <label for="">ISBN - 10</label>
+          <input type="text" name="ISBN10" id="ISBN10" class="form-control" onkeyup=" validateISBN10()">
+          <h6 id="isbnerror"></h6>
+
+          <label for="">Image</label>
+          <input type="file" class="form-control" name="Image" multiple required>
+          <button type="submit" class="btn btn-success mt-4" onclick="return validateForm(event)">Submit</button>
+          <h6 id="form-error-addproduct"></h6>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+</div>
+
+
+<script>
+  let productnameError = document.getElementById('productname-error')
+  let authornameError = document.getElementById('authorname-error')
+  let sellingpriceError = document.getElementById('sellingprice-error')
+  let descriptionError = document.getElementById('Description-error')
+  let isbnError = document.getElementById('isbnerror')
+  let formError = document.getElementById('form-error-addproduct')
+
+  console.log("kkkkkkkkk")
+
+
+  function validateProductName() {
+    let productName = document.getElementById('ProductName').value;
+
+    if (productName.length == 0) {
+      document.getElementById('productname-error').style.color = 'red';
+      productnameError.innerHTML = 'Name is Required';
+      return false;
+    }
+    if (productName.length < 5) {
+      document.getElementById('productname-error').style.color = 'red';
+      productnameError.innerHTML = 'Name contain atleast 5 character';
+      return false;
+    }
+    if (productName.length > 50) {
+      document.getElementById('productname-error').style.color = 'red';
+      productnameError.innerHTML = 'Exceeded maximum limit 50';
+      return false;
+    }
+    {
+      { !-- if (!productName.match(/^[A-Za-z0-9_-]*$/)) { --} }
+      if (!productName.match(/[\w\s]*/)) {
+        document.getElementById('productname-error').style.color = 'red';
+        productnameError.innerHTML = 'Can only contain letters';
+        return false;
+      }
+      document.getElementById('productname-error').style.color = 'green';
+      productnameError.innerHTML = 'valid';
+      return true;
+    }
+
+    function validateAuthorName() {
+      let authorName = document.getElementById('Author').value;
+
+      if (authorName.length == 0) {
+        document.getElementById('authorname-error').style.color = 'red';
+        authornameError.innerHTML = 'Name is Required';
+        return false;
+      }
+      if (authorName.length < 5) {
+        document.getElementById('authorname-error').style.color = 'red';
+        authornameError.innerHTML = 'Name contain atleast 5 character';
+        return false;
+      }
+      if (authorName.length > 20) {
+        document.getElementById('authorname-error').style.color = 'red';
+        authornameError.innerHTML = 'Exceeded maximum limit';
+        return false;
+      }
+      if (!authorName.match(/^[A-Za-z]*\s{0,1}[A-Za-z]*\s{0,1}?[A-Za-z]*$/)) {
+        document.getElementById('authorname-error').style.color = 'red';
+        authornameError.innerHTML = 'Can only contain letters';
+        return false;
+      }
+      document.getElementById('authorname-error').style.color = 'green';
+      authornameError.innerHTML = 'valid';
+      return true;
+    }
+
+    function validateSellingPrice() {
+
+      let sellingPrice = document.getElementById('SellingPrice').value;
+
+      {
+        {
+          !-- if (sellingPrice.length < 6) {
+            document.getElementById('sellingprice-error').style.color = 'red';
+            sellingpriceError.innerHTML = 'Can only contain less than 5 digits';
+            return false;
+          } --}
+      }
+      if (!sellingPrice.match(/[0-9]/)) {
+        document.getElementById('sellingprice-error').style.color = 'red';
+        sellingpriceError.innerHTML = 'Can only contain digits';
+        return false;
+      }
+      document.getElementById('sellingprice-error').style.color = 'green';
+      sellingpriceError.innerHTML = 'valid';
+      return true;
+    }
+
+    function validateDescription() {
+      let description = document.getElementById('Description').value;
+
+      if (description.length == 0) {
+        document.getElementById('Description-error').style.color = 'red';
+        descriptionError.innerHTML = 'Description is Required';
+        return false;
+      }
+      if (description.length < 20) {
+        document.getElementById('Description-error').style.color = 'red';
+        descriptionError.innerHTML = 'Name contain atleast 20 character';
+        return false;
+      }
+      if (description.length > 2000) {
+        document.getElementById('Description-error').style.color = 'red';
+        descriptionError.innerHTML = 'Exceeded maximum limit 2000';
+        return false;
+      }
+      document.getElementById('Description-error').style.color = 'green';
+      descriptionError.innerHTML = 'valid';
+      return true;
+    }
+
+    function validateISBN10() {
+      let isbn10 = document.getElementById('ISBN10').value;
+
+      if (isbn10.length !== 10) {
+        document.getElementById('isbnerror').style.color = 'red';
+        isbnError.innerHTML = 'Can contain exactly 10 characters';
+        return false;
+      }
+      if (!isbn10.match(/[A-Za-z0-9]/)) {
+        document.getElementById('isbnerror').style.color = 'red';
+        isbnError.innerHTML = 'Can only contain digits and alphabets';
+        return false;
+      }
+      document.getElementById('isbnerror').style.color = 'green';
+      isbnError.innerHTML = 'valid';
+      return true;
+    }
+
+    function validateForm(e) {
+      if (!validateProductName() || !validateAuthorName() || !validateSellingPrice() || !validateDescription() || !validateISBN10()) {
+        e.preventDefault();
+
+        document.getElementById('form-error-addproduct').style.color = 'red';
+        formError.innerHTML = 'Please fix error to submit';
+        return false;
+      } else {
+        Swal.fire(
+          'Done!',
+          'Product added to cart!',
+          'success'
+        )
+        return true;
+
+
+      }
+    }
+
+</script>

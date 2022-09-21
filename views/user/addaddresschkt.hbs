@@ -1,0 +1,67 @@
+<div class="login-register-area pt-50 pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ms-auto me-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <a href="#">
+                            <h4> Add Address - From Checkout </h4>
+                        </a>
+                        {{!-- <a class="active" href="/signup">
+                            <h4> register </h4>
+                        </a> --}}
+                    </div>
+                    <div class="tab-content">
+                        <div id="lg2" class="tab-pane active">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="/addaddresschkt" method="post">
+                                        <input type="text" name="userId" id="" value="{{registeredUser._id}}" hidden>
+                                        <input type="text" name="address" id="address" placeholder="Address" onkeyup="return validateAddress()">
+                                        <h6 id="address-error"></h6>
+                                        <input type="text" name="mobile" id="mobile" placeholder="Mobile">
+                                        <h6 id="mobile-error"></h6>
+                                        <input type="text" name="pincode" id="pincode" placeholder="Pincode">
+                                        <h6 id="pincode-error"></h6>
+
+                                        <div class="button-box">
+                                            <button type="submit">Add</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let addressError = document.getElementById('address-error')
+    let mobileError = document.getElementById('mobile-error')
+    let pincodeError = document.getElementById('pincode-error')
+    { { !--let formError = document.getElementById('pincode-error')-- } }
+
+    function validateAddress() {
+        let address = document.getElementById('address').value;
+        if (address.length == 0) {
+            document.getElementById('address-error').style.color = 'red';
+            addressError.innerHTML = 'Address is Required'
+            return false;
+        }
+        if (!address.match(/^[A-Za-z]*\s{0,1}[A-Za-z]*\s{0,1}?[A-Za-z]*$/)) {
+            document.getElementById('address-error').style.color = 'red';
+            addressError.innerHTML = 'Can only contain letters';
+            return false;
+        }
+        document.getElementById('address-error').style.color = 'green';
+        addressError.innerHTML = 'valid';
+        return true;
+    }
+
+
+
+</script>

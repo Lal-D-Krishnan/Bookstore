@@ -1,0 +1,49 @@
+<section>
+  <div class="container">
+    {{!-- <div class="row mt-4">
+      <a href="/admin/list-users" class="btn btn-outline-secondary w-auto me-3">List User</a>
+      <a href="/admin/add-users" class="btn btn-outline-warning w-auto me-3">Add User</a>6666666
+      <a href="/admin/add-products" class="btn btn-outline-success w-auto">Add Product</a>
+    </div> --}}
+    <table class="table mt-5" id="myTable">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          {{!-- <th scope="col">Password</th> --}}
+          <th>Status</th>
+          <th>Block/UnBlock</th>
+          <th>Orders</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {{#each listOfUsers}}
+        <tr>
+          <th scope="row"> {{inc @index}} </th>
+          <td>{{this.Name}}</td>
+          <td>{{this.Email}}</td>
+          {{!-- //<td>{{this.Password}}</td> --}}
+          {{!-- <td><img style="width: 100px; height:100px;" src="/product-images/{{this._id}}.jpg" alt="hhhh"></td>
+          --}}
+          <td><a {{this._id}} class="btn btn-dark text-white" style="pointer-events: none;">{{this.active}}</a></td>
+
+          {{!-- <td><a href="/admin/delete-user/{{this._id}}" class="btn btn-danger"
+              onclick="return confirm('Are you sure you want to delete {{this.Name}}?')">Delete</a></td> --}}
+          {{#if this.active}}
+          <td><a href="/admin/admin-blockuser/{{this._id}}" class="btn btn-danger">Block</a></td>
+          {{else}}
+          <td><a href="/admin/admin-unblockuser/{{this._id}}" class="btn btn-success">UnBlock</a></td>
+          {{/if}}
+          <td><a href="/admin/admin-listorders/{{this._id}}" class="btn btn-info">List Orders</a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div>
+</div>
+</div>

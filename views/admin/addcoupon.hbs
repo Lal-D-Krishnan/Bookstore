@@ -1,0 +1,96 @@
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Add Coupon</h2>
+                <form action="/admin/addcoupon" method="POST">
+
+                    <label for="">Coupon Namee</label>
+                    <input type="text" name="coupon" id="coupon" class="form-control" onkeyup="validatecouponName()">
+                    <h6 id="couponerror"></h6>
+
+                    <label for="">OFF %</label>
+                    <input type="text" name="offpercent" id="offpercent" class="form-control" onkeyup="validateoffpercent()">
+                    <h6 id="offpercenterror"></h6>
+
+                    <button type="submit" class="btn btn-success mt-4" onclick="return validateFormCpn(event)">Submit</button>
+                    <h6 id="form-error-coupon"></h6>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+</div>
+
+<script>
+    let couponError = document.getElementById("couponerror")
+    let offpercentError = document.getElementById("offpercenterror")
+    let formErrorcoupon = document.getElementById('form-error-coupon')
+
+    function validatecouponName() {
+        let coupon = document.getElementById("coupon")
+
+        if (coupon.length == 0) {
+            document.getElementById('couponerror').style.color = 'red';
+            couponError.innerHTML = 'Coupon Name is Required';
+            return false;
+        }
+        if (coupon.length < 5) {
+            document.getElementById('couponerror').style.color = 'red';
+            couponError.innerHTML = 'Coupon should contain atleast 5 character';
+            return false;
+        }
+        if (coupon.length > 6) {
+            document.getElementById('couponerror').style.color = 'red';
+            couponError.innerHTML = 'Exceeded maximum limit 6';
+            return false;
+        }
+        if (!coupon.match(/[\w\s]*/)) {
+            document.getElementById('couponerror').style.color = 'red';
+            couponError.innerHTML = 'Can only contain characters';
+            return false;
+        }
+        document.getElementById('couponerror').style.color = 'green';
+        couponError.innerHTML = 'valid';
+        return true;
+    }
+
+    function validateoffpercent() {
+        let offvalue = document.getElementById("offpercent")
+
+        if (offvalue.length == 0) {
+            document.getElementById('offpercenterror').style.color = 'red';
+            offpercentError.innerHTML = 'Coupon Name is Required';
+            return false;
+        }
+
+        if (!offvalue.match(/^[0-9]{2}$/)) {
+            document.getElementById('offpercenterror').style.color = 'red';
+            offpercentError.innerHTML = 'Should contain only 2 digits';
+            return false;
+        }
+        document.getElementById('offpercenterror').style.color = 'green';
+        offpercentError.innerHTML = 'valid';
+        return true;
+    }
+
+    function validateFormCpn(e) {
+
+        if (!validatecouponName() || !validateoffpercent()) {
+            e.preventDefault();
+         
+            document.getElementById('form-error-coupon').style.color = 'red';
+            formErrorcoupon.innerHTML = 'Please fix error to submit';
+            return false;
+        } else {
+            console.log("VAlidateed subcategory Name")
+            document.getElementById('form-error-coupon').style.color = 'green';
+            formErrorcoupon.innerHTML = 'valid';
+            return true;
+        }
+    }
+</script>

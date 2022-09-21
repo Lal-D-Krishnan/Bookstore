@@ -1,0 +1,11 @@
+.buttonBorder{
+    BORDER:.3PX solid gray !important;
+    border-radius: 0px !important;
+
+}
+.pro-details-quality span {
+    display: inline-block !important;
+    font-weight: 600;
+    margin: 0 0 7px;
+    letter-spacing: .5px;
+}

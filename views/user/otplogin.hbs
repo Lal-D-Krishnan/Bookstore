@@ -1,0 +1,50 @@
+        <div class="breadcrumb-area bg-gray">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <ul>
+                        {{!-- <li>
+                            <a href="/">Home</a>
+                        </li> --}}
+                        <li class="active">Login With OTP </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="login-register-area pt-50 pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12 ms-auto me-auto">
+                        <div class="login-register-wrapper">
+                            <div class="login-register-tab-list nav">
+                                <a href="/login">
+                                    <h4> GO BACK TO LOGIN </h4>
+                                </a>
+                                {{!-- <a class="active" href="/signup">
+                                    <h4> register </h4>
+                                </a> --}}
+                            </div>
+                            <div class="tab-content">
+                                <div id="lg2" class="tab-pane active">
+                                    <div class="login-form-container">
+                                        <div class="login-register-form">
+                                            <form action="/otp-verification" method="post">
+                                                 {{#if UserNotExist}}
+                                                 <p class="text-danger"> This number does not exist</p>
+                                                 {{/if}}
+                                                <input type="text" name="number" placeholder="Enter Registered Phone number">
+                                                
+                                                <div class="button-box">
+                                                    <button type="submit">Proceed</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+

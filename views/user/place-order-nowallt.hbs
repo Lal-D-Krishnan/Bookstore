@@ -1,0 +1,194 @@
+<style>
+    .your-order-area .Place-order button {
+        background-color: #ff2f2f;
+        display: block;
+        cursor: pointer;
+        padding: 16px 50px 17px;
+        text-transform: uppercase;
+        width: 100%;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .checkout-login-info form input[type="text"] {
+        border: 1px solid #e8e8e8;
+        height: 50px;
+        background-color: transparent;
+        width: 48%;
+        font-size: 14px;
+        padding: 0 20px;
+    }
+
+    .checkout-login-info a {
+        background: #1f2226 none repeat scroll 0 0;
+        border: medium none;
+        color: #fff;
+        height: 50px;
+        margin-left: 6px;
+        padding: 5px 30px;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 600;
+        width: inherit;
+    }
+</style>
+
+
+<div class="checkout-main-area pt-200 pb-120">
+
+    <div class="container">
+        
+       
+        
+
+
+
+        <div class="customer-zone mb-20">
+            <p class="cart-page-title">Have a coupon? <a id="coupondropdown" class="checkout-click3" href="#">Click here
+                    to enter your
+                    code</a>
+            </p>
+            <div class="checkout-login-info3">
+                <form action="#" id="coupon-form">
+                    <input type="text" name="usrid" value="{{registeredUser._id}}" hidden>
+                    <input type="text" id="appliedcoupon" name="appliedcoupon" placeholder="Coupon code">
+                    <input type="submit" id="appliedcouponsubmit" type="button">
+                </form>
+                <p id="couponapplied" style="color: green;"></p>
+                <p id="couponappliedfalse" style="color: red;"></p>
+                <p id="couponstatefalse" style="color: rgb(255, 0, 8);"></p>
+                <p id="couponfalse" style="color: red;"></p>
+            </div>
+        </div>
+
+
+
+        <form id="checkout-form" action="#">
+            {{!-- <div class="customer-zone mb-20">
+                <p class="cart-page-title">Have a coupon? <a class="checkout-click3" href="#">Click here to enter your
+                        code</a></p>
+                <div class="checkout-login-info3"> --}}
+                    {{!-- <form action="#">
+                        <input type="text" placeholder="Coupon code">
+                        <input type="submit" value="Apply Coupon">
+                    </form> --}}
+                    {{!-- </div> --}}
+                {{!--
+            </div> --}}
+            <div class="checkout-wrap pt-30">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="your-order-area">
+                            <h3>Your order</h3>
+                            <div class="your-order-wrap gray-bg-4">
+                                <div class="your-order-info-wrap">
+                                    <div class="your-order-info order-total">
+                                        <ul>
+                                            <li>GRAND Total <span>₹&nbsp;<span id="totalvalue" name="totalvalue">{{total}}
+                                                    </span></span></li>
+                                            {{!-- <li>Wallet Money <span>₹<span id="wallettotal" name="wallettotal">{{wallettotal}} </span></span></li> --}}
+
+
+                                            <li id="amtdtdfrmwltli" style="display:none;">AMOUNT DEDUCTED FROM WALLET<span>-&nbsp;<span id="amtdtdfrmwlt" name="amtdtdfrmwlt"></span></span></li>
+                                            <li id="amtliwli" style="display:none;">AMOUNT LEFT IN WALLET<span><span id="amtliw" name="amtliw" style="color: green;"></span></span></li>
+                                            <li id="amttbpawdli" style="display:none;">NEW TOTAL<span>₹&nbsp;<span id="amttbpad" name="amttbpad"></span></span></li>
+
+                                            <li id="couponli" style="display:none;">COUPON OFF <span><span id="couponoff" name="couponoff"></span></span></li>
+                                            <li id="secondli" style="display:none;">After Applying Coupon <span>₹<span id="totalvalueaftercoupon" name="totalvalueaftercoupon"></span></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {{!-- Address section starts here --}}
+                                <div class="payment-method">
+                                    <div class="pay-top sin-payment">
+                                        <label for="payment_method_1" class="ms-0"> Choose Your Shipping Address</label>
+                                    </div>
+                                    {{#each addresses}}
+                                    <div class="pay-top sin-payment">
+                                        <input id="payment-method-2" class="input-radio" type="radio" value="{{this._id}}" name="address" required>
+                                        <label for="payment-method-2">{{this.address}}</label>
+                                        <div class="payment-box payment_method_bacs">
+                                            <p>Address : {{this.address}}</p>
+                                            <p>Mobile : {{this.mobile}}</p>
+                                            <p>pincode : {{this.pincode}}</p>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                    <a href="/addaddresschkt" style="font-weight: 500;">ADD ADDRESS +</a>
+                                </div>
+                                {{!-- Address section ends here --}}
+                                <input type="text" name="userId" value="{{registeredUser._id}}" hidden>
+                                <input type="text" name="wallet" id="wallet" hidden>
+                                <input type="text" name="couponInp" id="couponbodychecker" hidden>
+                                <input type="text" name="amountoffbycpn" id="amtoffbycpn" value="0"  hidden>
+                                <input type="text" name="amountoffbywallet" id="amtoffbywalt" value="0" hidden>
+
+
+
+                                {{!-- <div class="form-check mt-3" style="font-weight: 500;">
+                                    <input type="checkbox" name="wallet" class="form-check-input" id="exampleCheck1" value="walletUsed">
+                                    <label class="form-check-label" for="exampleCheck1">Wallet </label>
+                                </div> --}}
+
+                                {{!-- Payment section starts here --}}
+                                <div class="payment-method">
+                                    <div class="pay-top sin-payment">
+
+                                        <label for="payment_method_1" class="ms-0"> Choose Payment Method</label>
+
+                                        <div class="pay-top sin-payment sin-payment-3 mt-3" id="pm1" style="display: none;">
+                                            <input id="payment-method-1" class="input-radio1" type="radio" value="wallet" name="payment-method" required>
+                                            <label for="payment-method-1"> Wallet </label>
+                                            <div class="payment-box payment_method_bacs">
+                                                <p>Pay using Wallet </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="pay-top sin-payment" id="pm2">
+                                        <input id="payment-method-2" class="input-radio1" type="radio" value="Razorpay" name="payment-method" required>
+                                        <label for="payment-method-2">Razorpay</label>
+                                        <div class="payment-box payment_method_bacs">
+                                            <p>Use Razorpay to make Online Payment</p>
+                                        </div>
+                                    </div>
+                                    <div class="pay-top sin-payment" id="pm3">
+                                        <input id="payment-method-3" class="input-radio1" type="radio" value="COD" name="payment-method" required>
+                                        <label for="payment-method-3">Cash on delivery </label>
+                                        <div class="payment-box payment_method_bacs">
+                                            <p>Pay when you have recieved the Order</p>
+                                        </div>
+                                    </div>
+                                    <div class="pay-top sin-payment sin-payment-3" id="pm4">
+                                        <input id="payment-method-4" class="input-radio1" type="radio" value="Paypal" name="payment-method" required>
+                                        <label for="payment-method-4">PayPal <img alt="image-alternative" src="assets/images/icon-img/payment.png"></label>
+                                        <div class="payment-box payment_method_bacs">
+                                            <p>Use Paypal to make Online Payment</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                {{!-- Payment section ends here --}}
+                            </div>
+                            <div class="Place-order">
+                                <button class="btn rounded-0" type="submit" >Checkout </button>
+                                {{!-- <a href="#">Place Order</a> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{{!-- <script>
+
+
+</script> --}}
+

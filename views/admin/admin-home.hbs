@@ -1,0 +1,259 @@
+{{!-- <h1>hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</h1> --}}
+
+<div class="page-content-wrapper ">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="btn-group float-right">
+                        <ol class="breadcrumb hide-phone p-0 m-0">
+                            <li class="breadcrumb-item"><a href="#">BOOKSTORE B1 ADMIN</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Dashboard</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title end breadcrumb -->
+
+
+        <div class="row">
+            <!-- Column -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="d-flex flex-row">
+                            <div class="col-3 align-self-center">
+                                <div class="round">
+                                    <i class="mdi mdi-webcam"></i>
+                                </div>
+                            </div>
+                            <div class="col-6 align-self-center text-center">
+                                <div class="m-l-10">
+                                    <h5 class="mt-0 round-inner" style="color: green;">{{productCount}}</h5>
+                                    <p class="mb-0 text-muted">Products</p>
+                                </div>
+                            </div>
+                            <div class="col-3 align-self-end align-self-center">
+                                <h6 class="m-0 float-right text-center text-danger"> </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="d-flex flex-row">
+                            <div class="col-3 align-self-center">
+                                <div class="round">
+                                    <i class="mdi mdi-account-multiple-plus"></i>
+                                </div>
+                            </div>
+                            <div class="col-6 text-center align-self-center">
+                                <div class="m-l-10 ">
+                                    <h5 class="mt-0 round-inner" style="color: green;">{{usrCount}}</h5>
+                                    <p class="mb-0 text-muted">Users</p>
+                                </div>
+                            </div>
+                            <div class="col-3 align-self-end align-self-center">
+                                <h6 class="m-0 float-right text-center text-success"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="d-flex flex-row">
+                            <div class="col-3 align-self-center">
+                                <div class="round ">
+                                    <i class="mdi mdi-basket"></i>
+                                </div>
+                            </div>
+                            <div class="col-6 align-self-center text-center">
+                                <div class="m-l-10 ">
+                                    <h5 class="mt-0 round-inner" style="color: green;">{{ordrCount}}</h5>
+                                    <p class="mb-0 text-muted">Orders</p>
+                                </div>
+                            </div>
+                            <div class="col-3 align-self-end align-self-center">
+                                <h6 class="m-0 float-right text-center text-danger"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="d-flex flex-row">
+                            <div class="col-3 align-self-center">
+                                <div class="round">
+                                    <i class="mdi mdi-rocket"></i>
+                                </div>
+                            </div>
+                            <div class="col-6 align-self-center text-center">
+                                <div class="m-l-10">
+                                    <h5 class="mt-0 round-inner" style="color: green;">₹{{totalG}}</h5>
+                                    <p class="mb-0 text-muted">Total Sales</p>
+                                </div>
+                            </div>
+                            <div class="col-3 align-self-end align-self-center">
+                                <h6 class="m-0 float-right text-center text-success"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-8">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <h5 class="header-title pb-3 mt-0">Overview</h5>
+                        <canvas id="myChart" style="height:400px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-12 col-xl-4">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <a href="" class="btn btn-primary btn-sm float-right">More Info</a>
+                        <h5 class="header-title mt-0 pb-3">Sold Count by Category</h5>
+
+                        {{!-- <ul class="list-unstyled list-inline text-center">
+                            <li class="list-inline-item">
+                                <p><i class="mdi mdi-checkbox-blank-circle text-primary mr-2"></i>Canada</p>
+                            </li>
+                            <li class="list-inline-item">
+                                <p><i class="mdi mdi-checkbox-blank-circle text-info mr-2"></i>USA</p>
+                            </li>
+                            <li class="list-inline-item">
+                                <p><i class="mdi mdi-checkbox-blank-circle text-greylight mr-2"></i>London</p>
+                            </li>
+                        </ul> --}}
+                        <canvas id="mtChart" style="height:345px;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/product-images/{{getMaxSoldPrdtImg.[0]}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5>Most Sold Product</h5>
+                    <h6 class="card-title">{{mstSold.Prodname}}</h6>
+                    <h6>Count : {{mstSold.maxSold}}</h6>
+                </div>
+            </div>
+            <div class="card mx-5" style="width: 18rem;">
+                <img class="card-img-top" src="/product-images/{{getMinSoldPrdtImg.[0]}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5>Least Sold Product</h5>
+                    <h6 class="card-title">{{lstSold.Prodname}}</h6>
+                    <h6>Count : {{lstSold.maxSold}}</h6>
+                </div>
+            </div>
+        </div>
+
+        {{!-- 777777777777777777777777777777 --}}
+
+
+    </div><!-- container -->
+
+
+</div> <!-- Page content Wrapper -->
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d')
+
+    let massPopChart = new Chart(myChart, {
+        type: 'bar', //bar,horizontal bar, pie , line , doughnut , radar , polararea
+        data: {
+            labels: ['COD', 'Razorpay', 'Paypal'],
+            datasets: [{
+                label: 'Revenue',
+                data: [
+                    {{ codtotal }},
+            {{ razrtotal }}, 
+                            {{ ppltotal }}
+                    ],
+    //backgroundColor:'green',
+    backgroundColor: [
+        'rgba(235, 148, 134, 1)',
+        'rgba(243, 222, 138, 1)',
+        'rgba(39, 40, 56, 1)'
+    ],
+        borderWidth: 1,
+            borderColor: '#777',
+                hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
+                }]
+            }
+        })
+</script>
+
+<script>
+    let mtChart = document.getElementById('mtChart').getContext('2d')
+
+    let massPopCharts = new Chart(mtChart, {
+        type: 'doughnut', //bar,horizontal bar, pie , line , doughnut , radar , polararea
+        data: {
+            labels: ['Action & Adventure', 'Biographies, Diaries & True Account', 'Comics & Mangas', 'Crime, Thriller & Mystery', 'Literature & Fiction', 'Non-Fiction', 'Science Fiction & Fantasy'],
+            datasets: [{
+                label: 'Population',
+                data: [
+                    {{ catySldCnt.[0].count }},
+                    {{ catySldCnt.[1].count }}, 
+                    {{ catySldCnt.[2].count }},
+                    {{ catySldCnt.[3].count }},
+                    {{ catySldCnt.[4].count }},
+                    {{ catySldCnt.[5].count }},
+                    {{ catySldCnt.[6].count }}
+                    ],
+    //backgroundColor:'green',
+    backgroundColor: [
+        'rgba(136, 171, 117, 1)',
+        'rgba(45, 147, 173, 1)',
+        'rgba(125, 124, 132, 1)',
+        'rgba(255, 215, 0, 1)',
+        'rgba(189, 183, 107, 1)',
+        'rgba(85, 107, 47, 1)',
+        'rgba(173, 255, 47, 1)',
+        'rgba(0, 206, 209, 1)'
+
+    ],
+        borderWidth: 1,
+            borderColor: '#777',
+                hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
+                }]
+            }
+        })
+</script>

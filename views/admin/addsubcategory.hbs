@@ -1,0 +1,76 @@
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Add Sub - Category</h2>
+                <form action="/admin/addsubcategory" method="POST">
+
+                    <label for="">Sub-Category Name</label>
+                    <input type="text" name="SubCategory" id="SubCategory" class="form-control" onkeyup="validatesubCategoryName()">
+                    <h6 id="subcategoryname-error"></h6>
+
+                    <button type="submit" class="btn btn-success mt-4" onclick="return validateFormSC(event)">Submit</button>
+                    <h6 id="form-error-subcategory"></h6>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+</div>
+
+<script>
+    let subcategorynameError = document.getElementById('subcategoryname-error')
+    let formErrorsubc = document.getElementById('form-error-subcategory')
+
+    function validatesubCategoryName() {
+        let subcategoryName = document.getElementById('SubCategory').value;
+
+        if (subcategoryName.length == 0) {
+            document.getElementById('subcategoryname-error').style.color = 'red';
+            subcategorynameError.innerHTML = 'SubCategory Name is Required';
+            return false;
+        }
+        if (subcategoryName.length < 5) {
+            document.getElementById('subcategoryname-error').style.color = 'red';
+            subcategorynameError.innerHTML = 'SubCategory Name  contain atleast 5 character';
+            return false;
+        }
+        if (subcategoryName.length > 50) {
+            document.getElementById('subcategoryname-error').style.color = 'red';
+            subcategorynameError.innerHTML = 'Exceeded maximum limit 50';
+            return false;
+        }
+        if (!subcategoryName.match(/[\w\s]*/)) {
+            document.getElementById('subcategoryname-error').style.color = 'red';
+            subcategorynameError.innerHTML = 'Can only contain characters';
+            return false;
+        }
+        document.getElementById('subcategoryname-error').style.color = 'green';
+        subcategorynameError.innerHTML = 'valid';
+        return true;
+    }
+
+        function validateFormSC(e) {
+        
+        if (!validatesubCategoryName()) {
+            e.preventDefault();
+            console.log("VAlidate subcategory Name")
+
+            document.getElementById('form-error-addcategory').style.color = 'red';
+            formErrorsubc.innerHTML = 'Please fix error to submit';
+            return false;
+        } else {
+            console.log("VAlidateed subcategory Name")
+            document.getElementById('form-error-addcategory').style.color = 'green';
+
+            formErrorsubc.innerHTML = 'valid';
+            return true;
+        }
+    }
+
+
+
+</script>

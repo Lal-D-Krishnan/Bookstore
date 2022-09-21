@@ -1,0 +1,137 @@
+
+<style>
+    .cart-table-content table thead>tr th {
+        padding: 12px 33px 22px;
+    }
+
+    .cart-table-content table tbody>tr td.product-wishlist-cart>a {
+        background-color: #3143b7;
+    }
+
+    .cart-table-content table tbody>tr td.product-wishlist-cart> div button {
+        color: white;
+        border-style: none;
+        border-color: #3143b7;
+        background-color: #3143b7;
+    }
+
+</style>
+
+
+<div class="cart-main-area pt-200 pb-120">
+    <div class="container">
+        <h3 class="cart-page-title">Your Order List</h3>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <div class="table-content table-responsive cart-table-content">
+                    {{!-- <div class="table"> --}}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>No </th>
+                                    <th>Date</th>
+                                    <th>Invoice</th>
+                                    <th>Amount</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                    <th>View Product</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each orders}}
+                                <tr>
+                                    <td>{{inc @index}}</td>
+
+                                    <td class="product-thumbnail">
+                                        <a href="#">{{this.date}}</a>
+                                    </td>
+                                    <td class="product-name"><a
+                                            href="/invoice/{{this._id}}">Invoice</a></td>
+                                    <td class="product-quantity pro-details-quality">₹{{this.totalAmount}}</td>
+                                    <td class="product-quantity pro-details-quality">{{this.paymentMethod}}</td>
+
+                                    <td class="product-wishlist-cart">
+                                        {{!-- <button>{{this.status}}</button> --}}
+
+                                         {{#ifEquals this.status 'PENDING'}}
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary  rounded-0 " style="pointer-events: none;" href="#" role="button" 
+                                                aria-expanded="false">
+                                                {{this.status}}
+                                            </button>
+                                        </div>
+                                         {{/ifEquals}}
+
+                                        {{#ifEquals this.status 'CANCEL'}}
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary  rounded-0 " style="pointer-events: none;" href="#" role="button" 
+                                                aria-expanded="false">
+                                                {{this.status}}
+                                            </button>
+                                        </div>
+                                         {{/ifEquals}}
+
+                                         {{#ifEquals this.status 'PLACED'}}
+                                            <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle rounded-0" href="#" role="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                {{this.status}}
+                                            </button>
+
+                                            <ul class="dropdown-menu rounded-0 m-0 p-0">
+                                                <li><button class="dropdown-item  rounded-0 " onclick="ordercancel(event,'{{this._id}}')">CANCEL</button></li>
+                                                {{!-- <li><button class="dropdown-item rounded-0" onclick="orderreturn('{{this._id}}')">RETURN</button></li> --}}
+                                            </ul>
+                                            </div>
+                                        {{/ifEquals}}
+
+                                        {{#ifEquals this.status 'DELIVERED'}}
+                                            <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle rounded-0" href="#" role="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                {{this.status}}
+                                            </button>
+
+                                            <ul class="dropdown-menu rounded-0 m-0 p-0">
+                                                {{!-- <li><button class="dropdown-item  rounded-0 " onclick="ordercancel('{{this._id}}')">CANCEL</button></li> --}}
+                                                <li><button class="dropdown-item rounded-0" onclick="orderreturn(event,'{{this._id}}')">RETURN</button></li>
+                                            </ul>
+                                            </div>
+                                        {{/ifEquals}}
+
+                                        {{#ifEquals this.status 'RETURN'}}
+                                            <div class="">
+                                            <button class="btn btn-secondary rounded-0" href="#" role="button">     
+                                                {{!-- data-bs-toggle="dropdown" aria-expanded="false"> --}}
+                                                {{this.status}}
+                                            </button>
+
+                                            </div>
+                                        {{/ifEquals}}
+
+
+                                             
+                                        
+
+                                    </td>
+                                    <td class="product-wishlist-cart">
+                                        {{!-- <div class="grand-totall bg-white border-0"><a href="">View Products</a>
+                                            --}}
+                                            <a href="/view-order-products/{{this._id}}">View Products</a>
+                                    </td>
+                                </tr>
+                                {{/each}}
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

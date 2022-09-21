@@ -1,0 +1,83 @@
+   <div class="shop-area pt-200 pb-120">
+            <div class="container">
+                <div class="row flex-row-reverse">
+
+                    <div class="col-lg-9">
+                        {{!-- <div class="shop-topbar-wrapper">
+                            <div class="shop-topbar-left">
+                                <div class="view-mode nav">
+                                    <a class="active" href="#shop-1" data-bs-toggle="tab"><i class="icon-grid"></i></a>
+                                    <a href="#shop-2" data-bs-toggle="tab"><i class="icon-menu"></i></a>
+                                </div>
+                                <p>Showing 1 - 20 of 30 results </p>
+                            </div>
+                            <div class="product-sorting-wrapper">
+                                <div class="product-shorting shorting-style">
+                                    <label>View :</label>
+                                    <select>
+                                        <option value=""> 20</option>
+                                        <option value=""> 23</option>
+                                        <option value=""> 30</option>
+                                    </select>
+                                </div>
+                                <div class="product-show shorting-style">
+                                    <label>Sort by :</label>
+                                    <select>
+                                        <option value="">Default</option>
+                                        <option value=""> Name</option>
+                                        <option value=""> price</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> --}}
+                        <div class="shop-bottom-area">
+                            <div class="tab-content jump">
+                                <div id="shop-1" class="tab-pane active">
+                                    <div class="row">
+                                    <h1 class="p-5">No such Product Exist</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            {{!-- <div class="pro-pagination-style text-center mt-10">
+                                <ul>
+                                    <li><a class="prev" href="#"><i class="icon-arrow-left"></i></a></li>
+                                    <li><a class="active" href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a class="next" href="#"><i class="icon-arrow-right"></i></a></li>
+                                </ul>
+                            </div> --}}
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-3">
+                        <div class="sidebar-wrapper sidebar-wrapper-mrg-right">
+                           
+                            <div class="sidebar-widget shop-sidebar-border mb-35 pt-40">
+                                <h4 class="sidebar-widget-title">Categories </h4>
+                                <div class="shop-catigory">
+                                    <ul>
+                                        {{#each allCategories}}
+                                        <li><a href="/getproductsbycat/{{this._id}}">{{this.Category}}</a></li>
+                                        
+                                        {{/each }}
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            {{!-- <div class="sidebar-widget shop-sidebar-border pt-40">
+                                <h4 class="sidebar-widget-title">Popular Tags</h4>
+                                <div class="tag-wrap sidebar-widget-tag">
+                                    <a href="#">Clothing</a>
+                                    <a href="#">Accessories</a>
+                                    <a href="#">For Men</a>
+                                    <a href="#">Women</a>
+                                    <a href="#">Fashion</a>
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

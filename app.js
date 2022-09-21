@@ -3,6 +3,7 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+var cors = require('cors');
 //let fileUpload=require('express-fileupload')
 const oneDay = 120000000000000000;
 let Handlebars = require('handlebars');
@@ -15,6 +16,7 @@ let app = express();
 let db=require('./config/connection')
 let session = require('express-session')
 
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

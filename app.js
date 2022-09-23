@@ -21,6 +21,9 @@ app.use(cors())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs',hbs.engine({extname:'hbs',defaultLayout:'layout',layoutsDir:__dirname+'/views/layout/',paritalsDir:__dirname+'/views/partials/'}))
+
+app.use('/static', express.static(path.join(__dirname, 'public')))
+
 app.use(logger('dev')); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
